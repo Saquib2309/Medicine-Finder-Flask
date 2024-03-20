@@ -1,0 +1,31 @@
+<h2>Show Data</h2>
+{%if vgt%}
+
+
+
+{% for d in vgt %}
+    <h3>{{d[0]}}</h3>
+     <P>
+         owner: {{d[1]}}<br>
+         l_no: {{d[2]}}<br>
+         address: {{d[3]}}<br>
+         contact: {{d[4]}}<br>
+         email:{{d[5]}}<br>
+
+     </P>
+     {% if d[6]=="no" %}
+<form method="POST" action="medical_photo" enctype="multipart/form-data">
+    <p>
+        <input type="hidden" name="H1" value="{{d[5]}}">
+        Photo<input type="file" name="F1">
+        <input type="submit" name="B1" value="upload">
+    </p>
+</form>
+{% else %}
+<img src="../static/photos/{{d[6]}}" width="100" height="100">
+<form method="POST" action="change_medical_photo">
+    <input type="hidden" name="H1" value="{{d[5]}}">
+    <input type="hidden" name="H2" value="{{d[6]}}">
+    <input type="submit" name="B1" value="change">
+</form>
+{% endif %}

@@ -1,0 +1,22 @@
+{% extends "a1.html" %}
+{% block m1%}
+<h1>Edit and Save</h1>
+{%if vgt %}
+
+<form method="POST" action="edit_medical_1">
+
+     <p>Name:  <input value="{{vgt[0]}}" type="text" id="txt1" name="T1" ></p>
+  <p>owner:  <input  value="{{vgt[1]}}" type="text" id="txt2" name="T2" ></p>
+  <p>l_no:  <input value="{{vgt[2]}}" type="text" id="txt3" name="T3" ></p>
+  <p>address:  <input value="{{vgt[3]}}" type="text" id="txt4" name="T4" ></p>
+  <p>contact:  <input value="{{vgt[4]}}" type="text" id="txt5" name="T5" ></p>
+  <p>email:  <input readonly value="{{vgt[5]}}" type="text" id="txt6" name="T6" ></p>
+
+    <button type="Submit" id="btn1" name="B1">Save Change</button>
+
+</form>
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}

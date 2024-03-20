@@ -1,0 +1,11 @@
+{% extends "a1.html" %}
+{% block m1%}
+<h1>photo change</h1>
+{% if data=="success" %}
+<h3>photo change</h3>
+{% else %}
+<h3>Error:cannot change file</h3>
+{% endif %}
+
+<p><a href="admin_home">continue</a> </p>
+{% endblock %}

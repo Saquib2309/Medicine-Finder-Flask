@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="../static/scripts/jquery.js"></script>
+    <script>
+	$(document).ready(function(e){
+
+		var b=2;
+		var c=2;
+
+		$("#p1").click(function(e){
+			$("#item").slideToggle(2500)
+			});
+
+		$("#p2").click(function(){
+			if(b==2)
+			{
+				$("#item2").slideDown(); b=1;
+			}
+			else if(b==1)
+			{
+				$("#item2").slideUp(); b=2;
+			}
+		});
+
+
+
+    });
+</script>
+
+
+
+<link href="../static/css/bootstrap.css" rel="stylesheet" />
+
+
+	<title>Untitled Document</title>
+
+
+</head>
+
+
+<body>
+
+	<div class="container-fluid bg-warning" style="height:200px; background-image:url(../static/images/healthcare.jpg);background-size:cover;">
+
+    </div>
+	<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+
+
+
+
+        <button class="navbar navbar-toggler" id="p1" >
+    <span class="navbar-toggler-icon">
+    </span>
+    	</button>
+            <div class="collapse navbar-collapse"  id="item">
+    	<ul class="navbar-nav text-center ">
+        	<li class="nav-item mr-4"><a href="medical_home" class="nav-link">Home</a></li>
+
+        <li class="nav-item dropdown mr-4"><a href="#" id="p2" class="nav-link dropdown-toggle">MEDICINE</a>
+            <ul class="dropdown-menu text-center bg-transparent" id="item2">
+            	<li class="dropdown-header ">medicine</li>
+                <li ><a href="medicine_add" class="dropdown-item">ADD</a></li>
+            	<li ><a href="show_medicine" class="dropdown-item">Show Medicine</a></li>
+
+
+             </ul>
+
+        </li>
+
+
+            </li>
+            <li class="nav-item mr-4"><a href="medical_profile" class="nav-link mr-auto">Profile</a></li>
+
+
+            <li class="nav-item mr-4"><a href="changepass_medical" class="nav-link mr-auto">change password</a></li>
+
+
+            <li class="nav-item mr-4"><a href="logout" class="nav-link mr-auto">logout</a></li>
+
+
+            </li>
+
+
+        </ul>
+        </div>
+	</nav>
+
+<div class="container-fluid bg-info " style="min-height:400px;">
+
+  {% block m2%}
+  {% endblock %}
+</div>
+<div class="container-fluid bg-primary text-center font-weight-bold p-3" style="margin-top:-30px;">
+<h2>&copy;by saqib javed</h2>
+</div>
+
+</body>
+</html>

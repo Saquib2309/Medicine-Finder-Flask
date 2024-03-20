@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    
+</head>
+
+<body class="bg-info text-center">
+<h1 class="text-white">Find Medicine</h1>
+<form method="POST" action="search" class="mt-5">
+  <p>
+      Medicine Name:
+      {% if nm %}
+      <input type="text" name="T1" value="{{nm}}">
+      {% else %}
+      <input type="text" name="T1">
+      {% endif %}
+      <button type="submit" name="B1">search</button>
+  </p>
+
+</form>
+
+{% if data %}
+<table width="100%">
+
+{% for row in data %}
+
+    <tr>
+                    <td width="33%" style="font-family: Arial;">
+                        medicine_name : {{ row[7] }}<br/>
+                        Company Name:{{row[8]}}<br>
+                        Type of medicine:{{row[10]}}<br>
+                        price: {{ row[11] }}<br/>
+
+                    </td>
+                    <td width="33%" style="font-family: Arial;">
+                        medical : {{ row[0] }}<br/>
+                        contact : {{ row[4] }}<br/>
+                        address : {{ row[3] }}<br/>
+                        Email : {{ row[5] }}
+                    </td>
+
+                </tr>
+{% endfor %}
+</table>
+{% elif msg %}
+{% endif %}
+</body>
+</html>

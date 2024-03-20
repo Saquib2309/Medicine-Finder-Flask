@@ -1,0 +1,39 @@
+{% extends "a2.html" %}
+{% block m2%}
+<h1>show medicine</h1>
+{% if vgt %}
+
+
+{% for d in vgt %}
+
+    <h3>{{d[0]}}</h3>
+<p>
+    medicine_name:{{d[1]}}<br>
+    company_name:{{d[2]}}<br>
+    l_no:{{d[3]}}<br>
+    typeof_medicine:{{d[4]}}<br>
+    price:{{d[5]}}
+
+</p>
+<table>
+    <tr>
+        <td>
+            <form method="POST" action="edit_medicine">
+                <input type="hidden" name="H1" value="{{d[0]}}">
+                <input type="submit" value="edit">
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="delete_medicine">
+                <input type="hidden" name="H1" value="{{d[0]}}">
+                <input type="submit" value="delete">
+            </form>
+        </td>
+    </tr>
+</table>
+{% endfor %}
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}

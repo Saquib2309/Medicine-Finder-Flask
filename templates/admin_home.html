@@ -1,0 +1,24 @@
+{% extends "a1.html" %}
+{% block m1%}
+<h1>admin block</h1>
+{% if photo=="no" %}
+
+<h1>photo upload</h1>
+<form method="POST" action="adminphoto" enctype="multipart/form-data">
+    file<input type="file" name="F1">
+    <input type="submit" name="B1" value="upload">
+</form>
+{% else %}
+ <img src="../static/photos/{{photo}}" width="100" height="100">
+<br>
+<p><a href="change_adminphoto">delete photo</a> </p>
+{% endif %}
+
+<p><a href="hospital_reg">Hospital Reg</a> </p>
+<p><a href="medical_reg">Medical Reg</a> </p>
+<p><a href="logout">logout</a> </p>
+<p><a href="admin_profile">profile</a> </p>
+<p><a href="show_medical">medicals</a> </p>
+<p><a href="changepass_admin">change</a> </p>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "a1.html" %}
+{% block m1 %}
+<h1>Hospital Registration</h1>
+
+<form method="post" action="hospital_reg">
+  <p>Hospital Name:<input type="text" name="T1" ></p>
+  <p>Contact:<input type="text" name="T2" ></p>
+  <p>Adddress:<input type="text" name="T3" ></p>
+  <p>Email:<input type="text" name="T4" ></p>
+  <p>Password:<input type="password" name="T5" ></p>
+  <p>Confirm Password:<input type="password" name="T6" ></p>
+  <p><button type="submit" name="B1">Submit</button> </p>
+</form>
+{% if vgt %}
+<h3>{{vgt}}</h3>
+{% endif %}
+
+{% endblock %}

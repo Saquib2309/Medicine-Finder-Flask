@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="../static/scripts/jquery.js"></script>
+    <script>
+	$(document).ready(function(e){
+
+		var b=2;
+		var c=2;
+
+		$("#p1").click(function(e){
+			$("#item").slideToggle(2500)
+			});
+
+		$("#p2").click(function(){
+			if(b==2)
+			{
+				$("#item2").slideDown(); b=1;
+				$("#item3").slideUp();c=2;
+			}
+			else if(b==1)
+			{
+				$("#item2").slideUp(); b=2;
+			}
+		});
+
+		$("#p3").click(function(){
+			if(c==2)
+			{
+				$("#item3").slideDown(); c=1;
+				$("#item2").slideUp();b=2;
+			}
+			else if(c==1)
+			{
+				$("#item3").slideUp(); c=2;
+			}
+		});
+
+    });
+</script>
+
+
+
+<link href="../static/css/bootstrap.css" rel="stylesheet" />
+
+
+	<title>Untitled Document</title>
+
+
+</head>
+
+
+<body>
+
+	<div class="container-fluid bg-warning" style="height:200px; background-image:url(../static/images/healthcare.jpg);background-size:cover;">
+
+    </div>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+
+
+
+        <button class="navbar navbar-toggler" id="p1" >
+    <span class="navbar-toggler-icon">
+    </span>
+    	</button>
+            <div class="collapse navbar-collapse"  id="item">
+    	<ul class="navbar-nav text-center ">
+        	<li class="nav-item mr-4"><a href="admin_home" class="nav-link">Home</a></li>
+
+        <li class="nav-item dropdown mr-4"><a href="#" id="p2" class="nav-link dropdown-toggle">ADD</a>
+            <ul class="dropdown-menu text-center bg-transparent" id="item2">
+            	<li class="dropdown-header ">add</li>
+                <li ><a href="#" class="dropdown-item">ADMIN</a></li>
+            	<li ><a href="medical_reg" class="dropdown-item">MEDICAL</a></li>
+            	<li ><a href="hospital_reg" class="dropdown-item">Hospital</a></li>
+
+
+             </ul>
+
+        </li>
+            <li class="nav-item dropdown mr-4"><a href="#" id="p3" class="nav-link dropdown-toggle">SHOW </a>
+
+            <ul class="dropdown-menu text-center bg-transparent" id="item3">
+            	<li class="dropdown-header">show</li>
+                <li ><a href="#" class="dropdown-item">ADMIN</a></li>
+            	<li ><a href="show_medical" class="dropdown-item">MEDICAL</a></li>
+
+             </ul>
+
+
+            </li>
+            <li class="nav-item mr-4"><a href="admin_profile" class="nav-link mr-auto">Profile</a></li>
+
+            <li class="nav-item mr-4"><a href="changepass_admin" class="nav-link mr-auto">change password</a></li>
+
+            <li class="nav-item mr-4"><a href="logout" class="nav-link mr-auto">logout</a></li>
+
+
+            </li>
+
+
+        </ul>
+        </div>
+	</nav>
+
+<div class="container-fluid bg-info " style="min-height:400px;">
+
+  {% block m1%}
+  {% endblock %}
+</div>
+<div class="container-fluid bg-light text-center font-weight-bold">
+<h2>&copy;by saqib javed</h2>
+<p style="font-family:'Times New Roman', Times, serif">
+
+</p>
+
+
+
+</div>
+
+</body>
+</html>

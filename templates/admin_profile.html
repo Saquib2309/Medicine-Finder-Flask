@@ -1,0 +1,19 @@
+{% extends "a1.html" %}
+{% block m1 %}
+<h1>My profile</h1>
+{% if vgt %}
+<form method="POST" action="admin_profile">
+  <p>Name:<input type="text" value="{{vgt[0]}}" id="txt1" name="T1"></p>
+  <p>owner:<input type="text" value="{{vgt[1]}}" id="txt2" name="T2"></p>
+  <p>l_no:<input type="text" value="{{vgt[2]}}" id="txt3" name="T3"></p>
+  <p>address:<input type="text" value="{{vgt[3]}}" id="txt4" name="T4"></p>
+  <p>cotact:<input type="text" value="{{vgt[4]}}" id="txt5" name="T5"></p>
+  <p>email:{{vgt[5]}}</p>
+  <button type="submit" id="btn1" name="B1">edit</button>
+</form>
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}
